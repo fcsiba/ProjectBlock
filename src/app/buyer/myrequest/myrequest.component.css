@@ -1,0 +1,17 @@
+th {
+  
+  text-align: left;
+  padding: 8px;
+  Color :#00FFFF;
+  background-color:black;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 120px;
+ 
+}
+h2{
+  font-family: 'PT Sans Narrow', sans-serif;
+}

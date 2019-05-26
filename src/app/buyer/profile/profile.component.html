@@ -1,0 +1,34 @@
+
+ <!-- Top navigation -->
+
+<!-- Sidebar navigation -->
+<div class="container">
+<div class="row">
+
+<!-- Main content -->
+<main role="main" class="col-md-8  px-4" style=" margin: 10px; margin-bottom: 100px;">
+<div class="inner-adjust">
+<div class="pt-3 pb-2 mb-3 border-bottom col-md-8" style=" margin-top: 20px;">
+<h1 class="h2" style="color: black">User Profile</h1>
+</div>
+<!-- Show user data when logged in -->
+<div class="row" *ngIf="userservice.userData as user">
+<div class="col-md-12">
+<div class="media">
+	
+<img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.image) ? user.image : '/assets/images/login.png'}}"
+alt="{{user.displayName}}">
+<div class="media-body">
+<h3> {{(userData["0"].name) }}</h3>
+
+<p>Email: {{userData["0"].email}}</p>
+<p>Contact: {{userData["0"].contact}}</p>
+<p>Organization: {{userData["0"].organization}}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>

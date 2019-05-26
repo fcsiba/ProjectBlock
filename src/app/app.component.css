@@ -1,0 +1,36 @@
+h1{
+	 position: absolute;
+  bottom: 2%;
+left: 20%;
+ color: red;
+}
+
+
+button{
+	color:#00FFFF;
+}
+
+
+ .navbar-nav .nav-link {
+color: #00FFFF;
+float: right;
+
+
+	}
+ul .nav .navbar-nav{
+float: right;
+	}
+
+
+	.navbar-nav{
+float: right;
+text-align: right;
+	}
+
+
+
+	a.navbar-brand img{
+		width:30%;
+height: 10%;
+
+	}

@@ -1,0 +1,139 @@
+<div class="container" align="center" style="left: 100px; margin-left:200px;" *ngIf="pro">
+  <div class="row" >
+    <div class="col" style="margin: 20px; margin-top:150px; ">
+      
+      <h2 style="text-align: center; color: black; font-size: 30px; ">My Projects </h2>
+    </div>
+  </div>
+<table class="table table-hover"  >
+    <thead >
+      <tr style="">
+        <th>Title</th>
+      
+        <th>Supervisor</th>
+        <th>Topic</th>
+        <th>Terms</th>
+         <th >Price</th>
+          <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let p of products" >
+      <tr *ngIf="p.userid == userId" >
+         
+        <td> {{ p.title }}</td>
+       
+        <td>{{p.supervisor}}</td>
+        <td>{{p.topic}}</td>
+        <td>{{p.terms}}</td>
+        <td>{{p.price}}</td>
+         <td style=" "><a class="btn" (click)="editProduct( p)"  style="color: white; background-color: black;"><i class="fa fa-trash"></i>Edit</a><a class="btn" style="margin-left: 20px;" (click)="onDelete(p.id)"  style="color: white; background-color: black; margin-left: 20px;"><i class="fa fa-trash" style=""></i>Delete</a></td>
+      
+    
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
+<div >
+  <div class="limiter">
+     <div   *ngIf="!pro" class="container-login100"  style="background-image: url('./assets/images/bk.jpg');">
+    
+      <div class="wrap-login100 p-t-190 p-b-30">
+	<ul *ngFor="let p of products">
+	
+      <div *ngIf="editing && editingProduct== p">
+       
+        <form (ngSubmit)="updateProduct(product)" >
+          <h1>Project Form</h1>
+                <h2>Please fill in this form to post your project.</h2>
+    
+
+          <span class="login100-form-title p-t-20 p-b-45">
+            
+          </span>
+
+    
+
+          <div class="wrap-input100 validate-input m-b-10" >
+            <input class="input100" type="text" name="title" placeholder="Title"  value=""  #title [(ngModel)]="editingProduct.title"  >
+
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+          <div class="wrap-input100 validate-input m-b-10" >
+            <input class="input100" type="text" name="price" placeholder="Price"  value=""  #title [(ngModel)]="editingProduct.price"  >
+
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+          <div class="wrap-input100 validate-input m-b-10" >
+            <input class="input100" type="text" name="supervisor"   [(ngModel)]="editingProduct.supervisor">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+          <div class="wrap-input100 validate-input m-b-10" data-validate = "Organization is required">
+            <input class="input100" type="text" name="organization" placeholder="Organization/Institution" #org  [(ngModel)]="editingProduct.organization">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+          <div class="wrap-input100 validate-input m-b-10" data-validate = "Organization is required">
+            <input class="input100" type="text" name="topic" placeholder="Topic" #org [(ngModel)]="editingProduct.topic" >
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+          <div class="" style="padding-top: 20px;">
+          <textarea rows="4" cols="50" class="text100" placeholder="Terms and Condition" style="padding-top: 20px; padding-left: 50px;"  name="terms" [(ngModel)]="editingProduct.terms"></textarea>
+          </div>
+          <div class="" style="padding-top: 20px; ">
+          <textarea rows="4" class="input100" cols="50" class="text100" placeholder="Description" style="padding-top: 20px;"  name="description" style="padding-left: 50px;" [(ngModel)]="editingProduct.description"></textarea>
+          </div>
+          <div class="form-group text-center" [hidden]="imgUploaded">
+        <label for="pictures">Product image</label>
+      <div id="product_img" class="text-center">
+         
+          <input type="file"  id="image" (change)="upload($event)">
+           <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-user"></i>
+            </span>
+      </div>
+   
+    </div>
+    <div class="form-group" style="width: 100%;">
+        <div class="progress-bar progress-bar-info progress-bar-striped"
+        role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+        aria-valuemin="0" aria-valuemax="100"
+        [ngStyle]="{width:progress.percentage+'%'}">
+        {{progress.percentage}}%</div>
+      </div>
+          
+          <div class="container-login100-form-btn p-t-10">
+          
+          <button type="submit" class="login100-form-btn">
+            Update
+          </button>
+        </div>
+        </form>
+      
+      </div>
+   </ul>
+</div>
+</div>
+</div>
+
+</div>
+<ng-template #noproducts>
+  <p>
+    There are no products yet.
+  </p>
+</ng-template>

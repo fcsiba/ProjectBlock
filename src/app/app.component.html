@@ -1,0 +1,72 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<nav class="navbar navbar-expand-sm " style="background-color: black;">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">
+<img src="{{logo}}">
+
+  </a>
+
+  <!-- Links -->
+  
+  
+    
+   
+   <ul class="navbar-nav mr-auto">
+            
+
+            </ul>
+  <ul class="navbar-nav">
+      <li routerLinkActive="active" class="nav-item" [routerLinkActiveOptions]=" { exact: true}"><button style="" class="btn" routerLink="/">Home</button></li>
+    <li routerLinkActive="active" class="nav-item">
+      <button style="" class="btn" routerLink="/about">About</button>
+    </li>
+                <li routerLinkActive="active" class="nav-item" [routerLinkActiveOptions]=" { exact: true}"><button style="" class="btn" routerLink="/view">Projects</button></li>
+                 <button style="" class="btn" routerLink="/form">Upload Project</button>
+               
+<div ngbDropdown class="" class="nav-item"  *ngIf="(userservice.isLoggedIn())">
+  <button class="btn nav-item" id="dropdownBasic1 dropdown-toggle" ngbDropdownToggle (click)="toggleNavbar()" style="border: none; background-color: none; color:  #00FFFF;">Account</button>
+  <div ngbDropdownMenu aria-labelledby="dropdownBasic1" style="background-color: black;  " [ngClass]="{'show':NavbarOpen}">
+    <button style="" class="dropdown-item" routerLink="/dashboard">Dashboard</button>
+    <button class="dropdown-item" routerLink="/myrequest">Request Status</button>
+    <button class="dropdown-item" routerLink="/project/edit">My Projects</button>
+    <button class="dropdown-item" routerLink="/requestdetail">Project Requests</button>
+
+  </div>
+</div>
+
+
+  <li *ngIf="!(userservice.isLoggedIn())" class="nav-item">
+    <button style="" class="btn" routerLink="/login">Login</button>
+  </li>
+<li *ngIf="(userservice.isLoggedIn())" class="">
+  <button style="" class="btn" (click)="userservice.SignOut()">
+Logout</button>
+</li>
+ 
+  <li class="nav-item" *ngIf="!(userservice.isLoggedIn())">
+        <button style="" class="btn" routerLink="/signup">Register</button>
+                </li>
+                 
+</ul>
+  
+</nav>
+
+  
+
+
+
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

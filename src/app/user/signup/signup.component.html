@@ -1,0 +1,110 @@
+<div class="limiter">
+		<div class="container-login100"  style="background-image: url('./assets/images/back.jpg');">
+			<div class="wrap-login100 p-t-190 p-b-30">
+				<form class="login100-form validate-form" [formGroup]="productForm">
+					<div class="login100-form-avatar">
+						<img src="./assets/images/signup.gif" left ="400" height = "130" width ="100" >
+					</div>
+					<h1>Sign Up</h1>
+                
+    
+
+					
+<div class="wrap-input100 validate-input m-b-10" data-validate = "email is required">
+						<input class="input100" type="text" name="name" placeholder="Name" #userEmail formControlName="name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "email is required">
+						<input class="input100" type="email" name="email" placeholder="Email" #userEmail formControlName="email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+					</div>
+					
+					
+					
+
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password" formControlName="pass">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock"></i>
+						</span>
+					</div>
+
+					
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Organization is required">
+						<input class="input100" type="text" name="organ" placeholder="Organization/Institution" #org formControlName="organ">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+					</div>
+					
+					
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Contact No is required">
+						<input class="input100" type="number" name="contact" placeholder="Contact Number" #contact formControlName="contact">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+					</div>
+					<div class="form-group text-center" [hidden]="imgUploaded">
+        <label for="pictures">your image</label>
+        <div  data-validate = "Contact No is required">
+      <div   id="product_img" class="text-center">
+         
+          <input type="file"    id="image" (change)="upload($event)">
+          <span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+      </div>
+  </div>
+   
+    </div>
+    <div class="form-group" style="width: 100%;">
+        <div class="progress-bar progress-bar-info progress-bar-striped"
+        role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+        aria-valuemin="0" aria-valuemax="100"
+        [ngStyle]="{width:progress.percentage+'%'}">
+        {{progress.percentage}}%</div>
+      </div>
+					<!--
+					<div class="wrap-input100" data-validate = "Contact No is required">
+						<input class="" type="file" name="imageo" #image formControlName="imageo">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+					</div>-->
+					 
+					
+					<div class="container-login100-form-btn p-t-10">
+						<button class="login100-form-btn" value="Sign Up" (click)="addProduct()">
+							Sign Up
+						</button>
+					</div>
+
+					
+<div class="row"  *ngIf="showMsg" >
+        <div class="col-xs-12">
+          <p class="alert " style="padding: 10px; margin:5px; background-color: black; color: white">
+              <strong>Registered Successfully!</strong> 
+
+          </p>
+        </div>
+      </div>
+						
+					
+					
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	

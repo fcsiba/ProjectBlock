@@ -1,0 +1,35 @@
+
+
+
+
+<div class="container" >
+
+
+  <div class="row" style="margin: 20px;">
+
+    <div class="col-md-4" *ngFor="let product of products$ | async |paginate: config">
+      <figure class="card card-product">
+        <div class="img-wrap"><img src="{{ product.image }}"></div>
+        <figcaption class="info-wrap">
+            <h4 class="title">{{ product.title }}</h4>
+            <p class="title">{{ product.topic }}</p>
+            <p class="desc">{{ product.description }}</p>
+           
+        </figcaption>
+        <div class="bottom-wrap">
+          <a href="" class="btn btn-sm float-right" style="background-color: black; color: white;" [routerLink]="[ '/project/detail', product.id]">Details</a>	
+          <div class="price-wrap h5">
+            <span class="price-new">Eth {{ product.price }}</span><!-- <del class="price-old">$1980</del>-->
+          </div> <!-- price-wrap.// -->
+        </div> <!-- bottom-wrap.// -->
+      </figure>
+    </div> <!-- col // -->
+    
+  </div>
+
+    <div class="container">
+<div class="col-md-8"></div>
+    <div align="center" class="col-md-4">
+    <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
+  </div>
+  </div>

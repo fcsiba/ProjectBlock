@@ -1,0 +1,32 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 120px;
+ 
+}
+h2{
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+a{
+  color: #00FFFF;
+}
+footer{
+  position: absolute;
+}
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  Color :#00FFFF;
+  background-color:black;
+}
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

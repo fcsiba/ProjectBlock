@@ -1,0 +1,60 @@
+ <div class="container-login100"  style="background-image: url('./assets/images/back.jpg');">
+    <div class="container">
+       
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-5">
+                        
+                        <div class="preview-pic tab-content">
+                          <div class="tab-pane active" id="pic-1"><img src="{{ product[0].image }}" /></div>
+                          <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
+                          <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
+                          <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
+                          <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="details col-md-6">
+                        <h1 class="product-title"><strong>{{ product[0].title }}</strong></h1>
+                       
+                         <h5 class="sizes">Price:
+                            <span class="size" data-toggle="tooltip" title="small">{{product[0].price}}</span>
+                           
+                        </h5>
+                           <h5 class="sizes">Organization:
+                            <span class="size" data-toggle="tooltip" title="small">{{product[0].organization}}</span>
+                           
+                        </h5>
+                        <h5 class="sizes">Topic:
+                            <span class="size" data-toggle="tooltip" title="small">{{product[0].topic}}</span>
+                           
+                        </h5>
+                        <h5 class="sizes">Supervisor:
+                            <span class="size" data-toggle="tooltip" title="small">{{product[0].supervisor}}</span>
+                           
+                        </h5>
+                        <h5 class="sizes">Terms and Conditions:
+                            <span class="size" data-toggle="tooltip" title="small">{{product[0].terms}}</span>
+                           
+                        </h5>
+                        <h5>Description<span>
+                        <p class="">{{ product[0].description }}</p></span></h5>
+                        
+                        
+                     
+                       
+                        <div class=" colors">
+                             
+                            <button class="add-to-cart btn btn-default" type="button" [routerLink]="[ 'user/detail',product[0].userid]">View Profile</button>
+                            <button class="like btn btn-default" type="button" [routerLink]="[ 'requestform',product[0].id]" style="margin-left: 20px;"><span class="" ></span>Request Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
