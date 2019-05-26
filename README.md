@@ -7,9 +7,13 @@ Follow this tutorial till 21:44 to set up the environment:  https://www.youtube.
 Then cd into the project directory from command shell
 
 run 'npm install'
+
 run 'npm install --save-dev webpack@4.30.0'
+
 run 'npm install --save-dev webpack-cli@3.3.2'
+
 run 'npm install --save-dev webpack-dev-server@3.4.1'
+
 run 'npm install --save web3@1.0.0-beta.35'
 
 Then, after successfully installing the dependencies above:
