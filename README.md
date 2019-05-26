@@ -1,6 +1,6 @@
 # ProjectBlock
 
-# Getting Started on Windows
+Getting Started on Windows
 
 Follow this tutorial till 21:44 to set up the environment:  https://www.youtube.com/watch?v=vIBPkuEVKD4
 
@@ -19,9 +19,13 @@ run 'npm install --save web3@1.0.0-beta.35'
 Then, after successfully installing the dependencies above:
 
 Open ganache gui 
+
 Click on 'Quickstart Workspace'
+
 Go to Settings>Server and make sure the port number is 8545, same as the one specified in truffle-config.js file in the project directory!
+
 On your browser, go to Metamask browser plugin (you can install it easily by going to: https://metamask.io/ and getting the extension for your specific browser) and make sure you are connected on 'Localhost 8545'
+
 Go to accounts and import account by copying the private key from one of the test accounts on ganache and pasting it there
 Make sure your metamask plugin is not on privacy mode by checking the settings
 
