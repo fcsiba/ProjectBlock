@@ -1,12 +1,45 @@
-# Block
+# ProjectBlock
+
+# Getting Started on Windows
+
+Follow this tutorial till 21:44 to set up the environment:  https://www.youtube.com/watch?v=vIBPkuEVKD4
+
+Then cd into the project directory from command shell
+
+run 'npm install'
+run 'npm install --save-dev webpack@4.30.0'
+run 'npm install --save-dev webpack-cli@3.3.2'
+run 'npm install --save-dev webpack-dev-server@3.4.1'
+run 'npm install --save web3@1.0.0-beta.35'
+
+Then, after successfully installing the dependencies above:
+
+Open ganache gui 
+Click on 'Quickstart Workspace'
+Go to Settings>Server and make sure the port number is 8545, same as the one specified in truffle-config.js file in the project directory!
+On your browser, go to Metamask browser plugin (you can install it easily by going to: https://metamask.io/ and getting the extension for your specific browser) and make sure you are connected on 'Localhost 8545'
+Go to accounts and import account by copying the private key from one of the test accounts on ganache and pasting it there
+Make sure your metamask plugin is not on privacy mode by checking the settings
+
+Keep ganache and metamask open to successfully run the project
+
+# To run ProjectBlock 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Cd into project directory 
 
-## Code scaffolding
+Run 'truffle compile'
+
+Run 'truffle migrate' (ganache should be open and connected for this step!)
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`
+
+The app will automatically reload if you change any of the source files.
+
+# Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
